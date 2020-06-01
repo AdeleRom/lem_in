@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fast_print.c                                       :+:      :+:    :+:   */
+/*   print_all.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ubyrd <ubyrd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/23 11:01:37 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/24 02:22:40 by ubyrd            ###   ########.fr       */
+/*   Created: 2020/05/07 20:18:10 by huller            #+#    #+#             */
+/*   Updated: 2020/05/14 12:42:00 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static void		buffer(char *buff, int *buff_i, char *src, int size)
 {
-	while (BUFF_SIZE - *buff_i < size)
+	while (PRINT_BUFF_SIZE - *buff_i < size)
 	{
-		size -= BUFF_SIZE - *buff_i;
-		while (*buff_i < BUFF_SIZE)
+		size -= PRINT_BUFF_SIZE - *buff_i;
+		while (*buff_i < PRINT_BUFF_SIZE)
 			buff[(*buff_i)++] = *(src++);
-		write(1, buff, BUFF_SIZE);
+		write(1, buff, PRINT_BUFF_SIZE);
 		*buff_i = 0;
 	}
 	while (size--)
@@ -35,7 +35,7 @@ static void		putnbr_in_buffer(char *buff, int *buff_i, int n)
 	}
 	else
 	{
-		while (BUFF_SIZE - *buff_i < 1)
+		while (PRINT_BUFF_SIZE - *buff_i < 1)
 		{
 			write(1, buff, *buff_i);
 			*buff_i = 0;

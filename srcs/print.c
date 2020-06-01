@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ubyrd <ubyrd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/22 05:48:23 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/24 02:22:40 by ubyrd            ###   ########.fr       */
+/*   Created: 2020/05/07 20:18:10 by huller            #+#    #+#             */
+/*   Updated: 2020/05/14 12:42:00 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void		run_ants(t_lem *l, t_solution *s, t_room **ant,
 {
 	int				i;
 	int				ant_num;
-	char			buff[BUFF_SIZE];
+	char			buff[PRINT_BUFF_SIZE];
 	int				buff_i;
 
 	buff_i = 0;

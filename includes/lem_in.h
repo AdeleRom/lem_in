@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ubyrd <ubyrd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Student <Student@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 21:33:07 by ubyrd             #+#    #+#             */
-/*   Updated: 2019/06/23 11:57:27 by ubyrd            ###   ########.fr       */
+/*   Created: 2020/05/01 09:54:07 by huller            #+#    #+#             */
+/*   Updated: 2020/06/01 21:39:04 by Student          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@
 # define F_START  (1u << 1u)
 # define F_END    (1u << 0u)
 
-/*
-** ---------- MACROS ----------
-*/
-
-# define ABS(a)    ((a) > 0 ? (a) : -(a))
-# define MAX(a, b) ((a) > (b) ? (a) : (b))
-# define MIN(a, b) ((a) < (b) ? (a) : (b))
-
 # define SIZE_DIFF  0x7F
 # define PTR_SIZE   8
 # define ROOM_SIZE  48
@@ -44,11 +36,7 @@
 
 # define MAX_CAPAC  1
 
-# define BUFF_SIZE  2048
-
-/*
-** ---------- STRUCTURES ----------
-*/
+# define PRINT_BUFF_SIZE  2048
 
 typedef struct s_room	t_room;
 
@@ -105,51 +93,16 @@ typedef	struct	s_lem
 	int				best_solution;
 }				t_lem;
 
-/*
-** ---------- FUNCTIONS ----------
-*/
-
-/*
-** utils.c
-*/
 int				extend_array(void **array, size_t array_size, size_t elem_size);
 int				write_check_num(char *s, int *n);
 void			free_all(t_lem *l);
-
-/*
-** reader_room.c
-*/
 int				is_add_room(t_lem *l, char *line);
-
-/*
-** reader_tube.c
-*/
 int				is_add_tube(t_lem *l, char *line);
-
-/*
-** reader.c
-*/
 int				read_check_create_graph(t_lem *l);
-
-/*
-** find_best_flow.c
-*/
 int				analyze_current_flow(t_lem *l, int path_count);
-
-/*
-** find_best_flow.c
-*/
 int				check_solution(t_lem *l, int path_count);
 int				find_best_flow(t_lem *l);
-
-/*
-** fast_print.c
-*/
 void			fast_print(t_lem *l, t_room **ant, char *buff, int *buff_i);
-
-/*
-** print.c
-*/
 int				print(t_lem *l);
 
 #endif
